@@ -8,3 +8,85 @@ $fut: Futura;
 $kinto: Kinto Sans;
 $gray: #b9b9b9;
 $gold: #8b7246;
+
+.line_animation {
+  animation: lineAnimation 1s forwards;
+}
+
+.fade_out {
+  animation: fadeOut 0.5s forwards;
+}
+
+.slide_up {
+  animation: slideUp 0.5s forwards;
+  animation-delay: 1s;
+}
+
+.slide_down {
+  animation: slideDown 0.5s forwards;
+  animation-delay: 1s;
+}
+.fade_up {
+  animation: fadeUp 0.5s forwards ease-out;
+}
+
+.d_1_5 {
+  animation-delay: 1.5s;
+}
+.d_1_7 {
+  animation-delay: 1.9s;
+}
+.d_1_8 {
+  animation-delay: 1.9s;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineAnimation {
+  0% {
+    width: 0%;
+  }
+
+  99% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    height: 50vh;
+  }
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    height: 50vh;
+  }
+  100% {
+    height: 0;
+  }
+}

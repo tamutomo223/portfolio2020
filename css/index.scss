@@ -23,6 +23,10 @@ section {
   }
 }
 
+.p0 {
+  padding: 0;
+}
+
 .fill {
   max-width: 100%;
   margin: 0;
@@ -31,6 +35,44 @@ section {
 img {
   height: 100%;
   width: 100%;
+}
+
+.wrapper {
+  position: relative;
+}
+.load {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  position: relative;
+}
+
+.load_mask1 {
+  position: absolute;
+  top: 0;
+  background-color: black;
+  height: 50vh;
+  width: 100%;
+  z-index: 1;
+}
+.load_mask2 {
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+  height: 50vh;
+  width: 100%;
+  z-index: 1;
+}
+.load_line {
+  height: 1px;
+  width: 0%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: $gold;
+  z-index: 11;
 }
 
 .title_block {
@@ -89,6 +131,7 @@ header {
     position: absolute;
     bottom: 20%;
     left: 5%;
+    z-index: 0;
     .sub_title {
       @include vwFontChange(70, 1600);
     }
