@@ -1,0 +1,86 @@
+.wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.full_image {
+  height: 100%;
+  width: 100%;
+}
+
+.no_wrap {
+  white-space: nowrap;
+}
+
+.white {
+  color: #fff;
+}
+.black {
+  color: #000;
+}
+
+.bg_white {
+  background-color: #fff;
+}
+
+.pc_only {
+  display: block;
+  @media screen and (max-width: 769px) {
+    display: none;
+  }
+}
+.pc_only_inline {
+  display: inline;
+  @media screen and (max-width: 769px) {
+    display: none;
+  }
+}
+
+.sp_only {
+  display: none;
+  @media screen and (max-width: 769px) {
+    display: block;
+  }
+}
+
+.inline {
+  display: inline;
+}
+.bold {
+  font-weight: bold;
+}
+
+.no_bold {
+  font-weight: 300;
+}
+
+.flex {
+  display: flex;
+}
+
+.tac {
+  text-align: center;
+}
+
+.m0a {
+  margin: 0 auto;
+}
+
+.object_contain {
+  object-fit: contain;
+}
+.object_cover {
+  object-fit: cover;
+}
+
+.opacity0 {
+  opacity: 0;
+}
+
+.circle {
+  border-radius: 50%;
+}

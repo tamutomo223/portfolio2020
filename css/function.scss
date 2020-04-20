@@ -1,0 +1,191 @@
+// ---------------------pxからvwに変換する用--------------------------
+
+// フォントサイズ用
+@mixin vwFontChange($fontPx, $viewWidth) {
+  $font-size: $fontPx / $viewWidth * 100;
+  font-size: #{$font-size}vw;
+}
+
+// padding全方向用
+@mixin vwPaddingChangeFull($topPx, $rightPx, $bottomPx, $leftPx, $viewWidth) {
+  $top: $topPx / $viewWidth * 100;
+  $right: $rightPx / $viewWidth * 100;
+  $bottom: $bottomPx / $viewWidth * 100;
+  $left: $leftPx / $viewWidth * 100;
+  padding: #{$top}vw #{$right}vw #{$bottom}vw #{$left}vw;
+}
+
+// padding二方向用
+@mixin vwPaddingChange($topPx, $leftPx, $viewWidth) {
+  $top: $topPx / $viewWidth * 100;
+  $left: $leftPx / $viewWidth * 100;
+  padding: #{$top}vw #{$left}vw;
+}
+
+// margin全方向用
+@mixin vwMarginChangeFull($topPx, $rightPx, $bottomPx, $leftPx, $viewWidth) {
+  $top: $topPx / $viewWidth * 100;
+  $right: $rightPx / $viewWidth * 100;
+  $bottom: $bottomPx / $viewWidth * 100;
+  $left: $leftPx / $viewWidth * 100;
+  margin: #{$top}vw #{$right}vw #{$bottom}vw #{$left}vw;
+}
+
+// margin上下+auto用
+@mixin vwMarginChangeAuto($topPx, $viewWidth) {
+  $top: $topPx / $viewWidth * 100;
+  margin: #{$top}vw auto;
+}
+
+// margin二方向用
+@mixin vwMarginChange($topPx, $leftPx, $viewWidth) {
+  $top: $topPx / $viewWidth * 100;
+  $left: $leftPx / $viewWidth * 100;
+  margin: #{$top}vw #{$left}vw;
+}
+
+// ---------------------vwへの変換かつ、maxを決める 主にPC.verで使用---------------------
+// フォントサイズ用
+@mixin vwFontChangeMax($fontPx, $viewWidth) {
+  $font-size: $fontPx / $viewWidth * 100;
+  font-size: #{$font-size}vw;
+  @media screen and (min-width: #{$viewWidth}px) {
+    font-size: #{$fontPx}px;
+  }
+}
+
+// padding全方向用
+@mixin vwPaddingChangeFullMax(
+  $topPx,
+  $rightPx,
+  $bottomPx,
+  $leftPx,
+  $viewWidth
+) {
+  $top: $topPx / $viewWidth * 100;
+  $right: $rightPx / $viewWidth * 100;
+  $bottom: $bottomPx / $viewWidth * 100;
+  $left: $leftPx / $viewWidth * 100;
+  padding: #{$top}vw #{$right}vw #{$bottom}vw #{$left}vw;
+  @media screen and (min-width: #{$viewWidth}px) {
+    padding: #{$topPx}px #{$rightPx}px #{$bottomPx}px #{$leftPx}px;
+  }
+}
+
+// padding二方向用
+@mixin vwPaddingChangeMax($topPx, $leftPx, $viewWidth) {
+  $top: $topPx / $viewWidth * 100;
+  $left: $leftPx / $viewWidth * 100;
+  padding: #{$top}vw #{$left}vw;
+  @media screen and (min-width: #{$viewWidth}px) {
+    padding: #{$topPx}px #{$leftPx}px;
+  }
+}
+
+// margin全方向用
+@mixin vwMarginChangeFullMax($topPx, $rightPx, $bottomPx, $leftPx, $viewWidth) {
+  $top: $topPx / $viewWidth * 100;
+  $right: $rightPx / $viewWidth * 100;
+  $bottom: $bottomPx / $viewWidth * 100;
+  $left: $leftPx / $viewWidth * 100;
+  margin: #{$top}vw #{$right}vw #{$bottom}vw #{$left}vw;
+  @media screen and (min-width: #{$viewWidth}px) {
+    margin: #{$topPx}px #{$rightPx}px #{$bottomPx}px #{$leftPx}px;
+  }
+}
+
+// margin上下+auto用
+@mixin vwMarginChangeAutoMax($topPx, $viewWidth) {
+  $top: $topPx / $viewWidth * 100;
+  margin: #{$top}vw auto;
+  @media screen and (min-width: #{$viewWidth}px) {
+    padding: #{$topPx}px auto;
+  }
+}
+
+// margin二方向用
+@mixin vwMarginChangeMax($topPx, $leftPx, $viewWidth) {
+  $top: $topPx / $viewWidth * 100;
+  $left: $leftPx / $viewWidth * 100;
+  margin: #{$top}vw #{$left}vw;
+  @media screen and (min-width: #{$viewWidth}px) {
+    margin: #{$topPx}px #{$leftPx}px;
+  }
+}
+
+// ---------------------positon用--------------------------
+@mixin absolute($top, $left, $index) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  z-index: $index;
+}
+
+// ---------------------XDの数値からの変換--------------------------
+@mixin letterSpacing($space) {
+  $spacing: $space / 1000;
+  letter-spacing: #{$spacing}em;
+}
+
+@mixin lineHeight($height, $font-size) {
+  $line-height: $height / $font-size;
+  line-height: $line-height;
+}
+
+// ---------------------Height--------------------------
+@mixin vwHeightChangeMax($heightPx, $viewWidth) {
+  $height: $heightPx / $viewWidth * 100;
+  height: #{$height}vw;
+  max-height: #{$heightPx}px;
+}
+
+@mixin vwHeightChange($heightPx, $viewWidth) {
+  $height: $heightPx / $viewWidth * 100;
+  height: #{$height}vw;
+  max-height: none;
+}
+
+// ---------------------Width--------------------------
+@mixin vwWidthChangeMax($widthPx, $viewWidth) {
+  $width: $widthPx / $viewWidth * 100;
+  width: #{$width}vw;
+  max-width: #{$widthPx}px;
+}
+
+@mixin vwWidthChange($widthPx, $viewWidth) {
+  $width: $widthPx / $viewWidth * 100;
+  width: #{$width}vw;
+  max-width: none;
+}
+
+// ---------------------Paddingをひく--------------------------
+@mixin vwHeightCalcPaddingMinus($heightParsent, $topPx, $bottomPx, $viewWidth) {
+  $top: $topPx / $viewWidth * 100;
+  $bottom: $bottomPx / $viewWidth * 100;
+  $total: $top + $bottom;
+  height: calc(#{$heightParsent}% - #{$total}vw);
+}
+
+@mixin vwWidthCalcPaddingMinus($widthParsent, $rightPx, $leftPx, $viewWidth) {
+  $right: $rightPx / $viewWidth * 100;
+  $left: $leftPx / $viewWidth * 100;
+  $total: $right + $left;
+  width: calc(#{$widthParsent}% - #{$total}vw);
+}
+
+// ---------------------borderRadius--------------------------
+@mixin vwBorderRadiusChange($radiusPx, $viewWidth) {
+  $radius: $radiusPx / $viewWidth * 100;
+  border-radius: #{$radius}vw;
+}
+
+@mixin vwBorderRadiusChangeMax($radiusPx, $viewWidth) {
+  $radius: $radiusPx / $viewWidth * 100;
+  border-radius: #{$radius}vw;
+  @media screen and (min-width:#{$viewWidth}px) {
+    border-radius: #{$radiusPx}px;
+  }
+}
+
+.a {
+}

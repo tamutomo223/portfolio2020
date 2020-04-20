@@ -1,0 +1,121 @@
+.wrapper {
+  width: 100%;
+  overflow-x: hidden; }
+
+a {
+  text-decoration: none; }
+
+.full_image {
+  height: 100%;
+  width: 100%; }
+
+.no_wrap {
+  white-space: nowrap; }
+
+.white {
+  color: #fff; }
+
+.black {
+  color: #000; }
+
+.bg_white {
+  background-color: #fff; }
+
+.pc_only {
+  display: block; }
+  @media screen and (max-width: 769px) {
+    .pc_only {
+      display: none; } }
+
+.pc_only_inline {
+  display: inline; }
+  @media screen and (max-width: 769px) {
+    .pc_only_inline {
+      display: none; } }
+
+.sp_only {
+  display: none; }
+  @media screen and (max-width: 769px) {
+    .sp_only {
+      display: block; } }
+
+.inline {
+  display: inline; }
+
+.bold {
+  font-weight: bold; }
+
+.no_bold {
+  font-weight: 300; }
+
+.flex {
+  display: flex; }
+
+.tac {
+  text-align: center; }
+
+.m0a {
+  margin: 0 auto; }
+
+.object_contain {
+  object-fit: contain; }
+
+.object_cover {
+  object-fit: cover; }
+
+.opacity0 {
+  opacity: 0; }
+
+.circle {
+  border-radius: 50%; }
+
+.gold {
+  color: #8b7246; }
+
+section {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.fill {
+  max-width: 100%; }
+
+header {
+  position: fixed;
+  font-family: Copperplate;
+  font-size: 1.25vw;
+  height: 6.25vw;
+  max-height: none;
+  width: 100%;
+  z-index: 3; }
+  header .header_list {
+    height: 100%;
+    padding: 0vw 5.625vw;
+    text-align: center; }
+    header .header_list ul {
+      height: 100%;
+      display: flex;
+      align-items: center; }
+      header .header_list ul li {
+        padding: 0.3125vw 1.5625vw; }
+        header .header_list ul li:hover {
+          border-bottom: #8b7246 0.12vw solid; }
+
+.kv {
+  background-image: url("../img/kv_pc.png");
+  height: 59.375vw;
+  max-height: none;
+  background-size: cover;
+  position: relative;
+  z-index: 2; }
+  .kv .text_block {
+    font-family: Futura;
+    position: absolute;
+    top: 50%;
+    left: 5%; }
+    .kv .text_block .sub_title {
+      font-size: 4.375vw; }
+    .kv .text_block .main_title {
+      font-size: 5.625vw;
+      padding: 3.125vw 0vw 0vw 4.375vw; }
+
+/*# sourceMappingURL=index.css.map */
