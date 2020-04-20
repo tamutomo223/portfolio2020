@@ -6,13 +6,45 @@
   color: $gold;
 }
 
+a {
+  color: black;
+}
+
 section {
   max-width: 1200px;
   margin: 0 auto;
+  @include vwPaddingChangeFullMax(100, 0, 0, 0, $pcWidth);
+  font-family: $kinto;
 }
 
 .fill {
   max-width: 100%;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.title_block {
+  position: relative;
+  font-family: $cop;
+  @include vwFontChangeMax(40, $pcWidth);
+  @include vwPaddingChangeFullMax(0, 0, 30, 64, $pcWidth);
+  border-bottom: 0.12vw gray solid;
+  @media screen and (min-width: 1200px) {
+    border-bottom: 2px gray solid;
+  }
+  &:before {
+    position: absolute;
+    bottom: 0;
+    width: 64px;
+    color: $gold;
+    @media screen and (min-width: 1200px) {
+      height: 2px;
+    }
+    height: 0.12px;
+  }
 }
 
 header {
@@ -56,6 +88,48 @@ header {
     .main_title {
       @include vwFontChange(90, 1600);
       @include vwPaddingChangeFull(50, 0, 0, 70, 1600);
+    }
+  }
+}
+
+.about {
+  .contents_block {
+    @include vwPaddingChangeMax(30, 0, $pcWidth);
+    width: 75%;
+    .content_ul {
+      .content {
+        position: relative;
+        @include vwPaddingChangeMax(40, 0, $pcWidth);
+        .content_title {
+          font-family: Devanagari Sangam MN;
+          @include vwFontChangeMax(30, $pcWidth);
+          @include vwPaddingChangeFullMax(0, 0, 30, 0, $pcWidth);
+        }
+        .content_sub_title {
+          @include vwFontChangeMax(20, $pcWidth);
+          @include vwPaddingChangeFullMax(0, 0, 12, 0, $pcWidth);
+        }
+        .content_main {
+          @include vwFontChangeMax(16, $pcWidth);
+          @include lineHeight(32, 16);
+          width: 55.5%;
+          .main_ul {
+            li {
+              display: flex;
+              .left_area {
+                width: 26%;
+              }
+            }
+          }
+        }
+        .content_image {
+          @include vwHeightChangeMax(300, $pcWidth);
+          @include vwWidthChangeMax(300, $pcWidth);
+          position: absolute;
+          right: 0;
+          top: 12%;
+        }
+      }
     }
   }
 }

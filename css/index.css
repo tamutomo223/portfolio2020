@@ -72,12 +72,49 @@ a {
 .gold {
   color: #8b7246; }
 
+a {
+  color: black; }
+
 section {
   max-width: 1200px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 8.3333333333vw 0vw 0vw 0vw;
+  font-family: Kinto Sans; }
+  @media screen and (min-width: 1200px) {
+    section {
+      padding: 100px 0px 0px 0px; } }
 
 .fill {
   max-width: 100%; }
+
+img {
+  height: 100%;
+  width: 100%; }
+
+.title_block {
+  position: relative;
+  font-family: Copperplate;
+  font-size: 3.3333333333vw;
+  padding: 0vw 0vw 2.5vw 5.3333333333vw;
+  border-bottom: 0.12vw gray solid; }
+  @media screen and (min-width: 1200px) {
+    .title_block {
+      font-size: 40px; } }
+  @media screen and (min-width: 1200px) {
+    .title_block {
+      padding: 0px 0px 30px 64px; } }
+  @media screen and (min-width: 1200px) {
+    .title_block {
+      border-bottom: 2px gray solid; } }
+  .title_block:before {
+    position: absolute;
+    bottom: 0;
+    width: 64px;
+    color: #8b7246;
+    height: 0.12px; }
+    @media screen and (min-width: 1200px) {
+      .title_block:before {
+        height: 2px; } }
 
 header {
   position: fixed;
@@ -117,5 +154,56 @@ header {
     .kv .text_block .main_title {
       font-size: 5.625vw;
       padding: 3.125vw 0vw 0vw 4.375vw; }
+
+.about .contents_block {
+  padding: 2.5vw 0vw;
+  width: 75%; }
+  @media screen and (min-width: 1200px) {
+    .about .contents_block {
+      padding: 30px 0px; } }
+  .about .contents_block .content_ul .content {
+    position: relative;
+    padding: 3.3333333333vw 0vw; }
+    @media screen and (min-width: 1200px) {
+      .about .contents_block .content_ul .content {
+        padding: 40px 0px; } }
+    .about .contents_block .content_ul .content .content_title {
+      font-family: Devanagari Sangam MN;
+      font-size: 2.5vw;
+      padding: 0vw 0vw 2.5vw 0vw; }
+      @media screen and (min-width: 1200px) {
+        .about .contents_block .content_ul .content .content_title {
+          font-size: 30px; } }
+      @media screen and (min-width: 1200px) {
+        .about .contents_block .content_ul .content .content_title {
+          padding: 0px 0px 30px 0px; } }
+    .about .contents_block .content_ul .content .content_sub_title {
+      font-size: 1.6666666667vw;
+      padding: 0vw 0vw 1vw 0vw; }
+      @media screen and (min-width: 1200px) {
+        .about .contents_block .content_ul .content .content_sub_title {
+          font-size: 20px; } }
+      @media screen and (min-width: 1200px) {
+        .about .contents_block .content_ul .content .content_sub_title {
+          padding: 0px 0px 12px 0px; } }
+    .about .contents_block .content_ul .content .content_main {
+      font-size: 1.3333333333vw;
+      line-height: 2;
+      width: 55.5%; }
+      @media screen and (min-width: 1200px) {
+        .about .contents_block .content_ul .content .content_main {
+          font-size: 16px; } }
+      .about .contents_block .content_ul .content .content_main .main_ul li {
+        display: flex; }
+        .about .contents_block .content_ul .content .content_main .main_ul li .left_area {
+          width: 26%; }
+    .about .contents_block .content_ul .content .content_image {
+      height: 25vw;
+      max-height: 300px;
+      width: 25vw;
+      max-width: 300px;
+      position: absolute;
+      right: 0;
+      top: 12%; }
 
 /*# sourceMappingURL=index.css.map */
