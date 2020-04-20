@@ -69,6 +69,9 @@ a {
 .circle {
   border-radius: 50%; }
 
+* {
+  font-family: Hiragino Kaku Gothic ProN; }
+
 .gold {
   color: #8b7246; }
 
@@ -78,14 +81,18 @@ a {
 section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 8.3333333333vw 0vw 0vw 0vw;
+  padding: 4.1666666667vw 0vw 0vw 0vw;
   font-family: Kinto Sans; }
   @media screen and (min-width: 1200px) {
     section {
-      padding: 100px 0px 0px 0px; } }
+      padding: 50px 0px 0px 0px; } }
+  @media screen and (max-width: 1200px) {
+    section {
+      margin: 0vw 4.1666666667vw; } }
 
 .fill {
-  max-width: 100%; }
+  max-width: 100%;
+  margin: 0; }
 
 img {
   height: 100%;
@@ -139,15 +146,14 @@ header {
 
 .kv {
   background-image: url("../img/kv_pc.png");
-  height: 59.375vw;
-  max-height: none;
+  height: 100vh;
   background-size: cover;
   position: relative;
   z-index: 2; }
   .kv .text_block {
     font-family: Futura;
     position: absolute;
-    top: 50%;
+    bottom: 20%;
     left: 5%; }
     .kv .text_block .sub_title {
       font-size: 4.375vw; }
@@ -156,17 +162,17 @@ header {
       padding: 3.125vw 0vw 0vw 4.375vw; }
 
 .about .contents_block {
-  padding: 2.5vw 0vw;
+  padding: 6.6666666667vw 0vw;
   width: 75%; }
   @media screen and (min-width: 1200px) {
     .about .contents_block {
-      padding: 30px 0px; } }
+      padding: 80px 0px; } }
   .about .contents_block .content_ul .content {
     position: relative;
-    padding: 3.3333333333vw 0vw; }
+    padding: 5.8333333333vw 0vw; }
     @media screen and (min-width: 1200px) {
       .about .contents_block .content_ul .content {
-        padding: 40px 0px; } }
+        padding: 70px 0px; } }
     .about .contents_block .content_ul .content .content_title {
       font-family: Devanagari Sangam MN;
       font-size: 2.5vw;
@@ -205,5 +211,168 @@ header {
       position: absolute;
       right: 0;
       top: 12%; }
+
+.skill .contents_block {
+  width: 75%;
+  padding: 9.1666666667vw 0vw; }
+  @media screen and (min-width: 1200px) {
+    .skill .contents_block {
+      padding: 110px 0px; } }
+  .skill .contents_block .content_area .content_ul {
+    display: flex;
+    justify-content: space-between; }
+    .skill .contents_block .content_area .content_ul .content {
+      width: 17.5vw;
+      max-width: 210px; }
+      .skill .contents_block .content_area .content_ul .content .content_title {
+        font-family: Devanagari Sangam MN;
+        font-size: 1.6666666667vw;
+        padding: 2.9166666667vw 0vw; }
+        @media screen and (min-width: 1200px) {
+          .skill .contents_block .content_area .content_ul .content .content_title {
+            font-size: 20px; } }
+        @media screen and (min-width: 1200px) {
+          .skill .contents_block .content_area .content_ul .content .content_title {
+            padding: 35px 0px; } }
+      .skill .contents_block .content_area .content_ul .content .content_image {
+        height: 7.1666666667vw;
+        max-height: 86px;
+        width: 7.1666666667vw;
+        max-width: 86px;
+        margin: auto; }
+        .skill .contents_block .content_area .content_ul .content .content_image img {
+          object-fit: contain; }
+      .skill .contents_block .content_area .content_ul .content .content_list {
+        border: solid 1px gray;
+        padding: 2vw 1.5vw 0vw 1.5vw;
+        height: 14.1666666667vw;
+        max-height: 170px;
+        font-size: 1.3333333333vw; }
+        @media screen and (min-width: 1200px) {
+          .skill .contents_block .content_area .content_ul .content .content_list {
+            padding: 24px 18px 0px 18px; } }
+        @media screen and (min-width: 1200px) {
+          .skill .contents_block .content_area .content_ul .content .content_list {
+            font-size: 16px; } }
+        .skill .contents_block .content_area .content_ul .content .content_list ul li:not(:last-of-type) {
+          padding: 0vw 0vw 1.5vw 0vw; }
+          @media screen and (min-width: 1200px) {
+            .skill .contents_block .content_area .content_ul .content .content_list ul li:not(:last-of-type) {
+              padding: 0px 0px 18px 0px; } }
+  .skill .contents_block .bottom_sentence_area {
+    font-size: 1.6666666667vw;
+    padding: 8.3333333333vw 0vw 0vw 0vw;
+    line-height: 1.7; }
+    @media screen and (min-width: 1200px) {
+      .skill .contents_block .bottom_sentence_area {
+        font-size: 20px; } }
+    @media screen and (min-width: 1200px) {
+      .skill .contents_block .bottom_sentence_area {
+        padding: 100px 0px 0px 0px; } }
+
+.works .contents_block {
+  width: 75%;
+  margin: auto;
+  padding: 13.3333333333vw 0vw; }
+  @media screen and (min-width: 1200px) {
+    .works .contents_block {
+      padding: 160px 0px; } }
+  .works .contents_block .content_area ul {
+    display: flex;
+    flex-wrap: wrap; }
+    .works .contents_block .content_area ul .content {
+      width: 50%;
+      height: 25vw;
+      max-height: 300px;
+      position: relative; }
+      .works .contents_block .content_area ul .content .content_image {
+        width: 100%;
+        height: 100%; }
+        .works .contents_block .content_area ul .content .content_image img {
+          object-fit: cover; }
+      .works .contents_block .content_area ul .content .content_mask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        color: white; }
+        .works .contents_block .content_area ul .content .content_mask:hover {
+          opacity: 1;
+          background: rgba(0, 0, 0, 0.699); }
+        .works .contents_block .content_area ul .content .content_mask .mask_title {
+          font-size: 1.6666666667vw;
+          padding: 2.5vw 0vw;
+          text-align: center; }
+          @media screen and (min-width: 1200px) {
+            .works .contents_block .content_area ul .content .content_mask .mask_title {
+              font-size: 20px; } }
+          @media screen and (min-width: 1200px) {
+            .works .contents_block .content_area ul .content .content_mask .mask_title {
+              padding: 30px 0px; } }
+        .works .contents_block .content_area ul .content .content_mask .mask_main {
+          margin: auto;
+          width: 75%;
+          font-size: 1.3333333333vw;
+          line-height: 1.6875; }
+          @media screen and (min-width: 1200px) {
+            .works .contents_block .content_area ul .content .content_mask .mask_main {
+              font-size: 16px; } }
+          .works .contents_block .content_area ul .content .content_mask .mask_main .bottom_text {
+            padding: 2.5vw 0vw; }
+            @media screen and (min-width: 1200px) {
+              .works .contents_block .content_area ul .content .content_mask .mask_main .bottom_text {
+                padding: 30px 0px; } }
+  .works .contents_block .bottom_sentence_area {
+    font-size: 1.6666666667vw;
+    line-height: 1.7;
+    padding: 7.5vw 0vw 0vw 0vw; }
+    @media screen and (min-width: 1200px) {
+      .works .contents_block .bottom_sentence_area {
+        font-size: 20px; } }
+    @media screen and (min-width: 1200px) {
+      .works .contents_block .bottom_sentence_area {
+        padding: 90px 0px 0px 0px; } }
+
+.contact .contents_block {
+  padding: 5vw 0vw;
+  width: 75%;
+  margin: auto; }
+  @media screen and (min-width: 1200px) {
+    .contact .contents_block {
+      padding: 60px 0px; } }
+  .contact .contents_block .sub_sentence {
+    font-size: 1.6666666667vw;
+    padding: 4.1666666667vw 0vw; }
+    @media screen and (min-width: 1200px) {
+      .contact .contents_block .sub_sentence {
+        font-size: 20px; } }
+    @media screen and (min-width: 1200px) {
+      .contact .contents_block .sub_sentence {
+        padding: 50px 0px; } }
+  .contact .contents_block .main_sentence {
+    font-size: 2.0833333333vw;
+    line-height: 1.72;
+    padding: 0vw 0vw 2.5vw 0vw; }
+    @media screen and (min-width: 1200px) {
+      .contact .contents_block .main_sentence {
+        font-size: 25px; } }
+    @media screen and (min-width: 1200px) {
+      .contact .contents_block .main_sentence {
+        padding: 0px 0px 30px 0px; } }
+
+footer {
+  background: #000;
+  color: white;
+  font-size: 1.1666666667vw;
+  height: 5vw;
+  max-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  @media screen and (min-width: 1200px) {
+    footer {
+      font-size: 14px; } }
 
 /*# sourceMappingURL=index.css.map */
