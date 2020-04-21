@@ -5,6 +5,14 @@
 * {
   font-family: Hiragino Kaku Gothic ProN;
 }
+
+body {
+  overflow: hidden;
+}
+
+.over {
+  overflow: auto;
+}
 .gold {
   color: $gold;
 }
@@ -20,6 +28,10 @@ section {
   font-family: $kinto;
   @media screen and(max-width:1200px) {
     @include vwMarginChange(0, 50, $pcWidth);
+  }
+
+  @media screen and(max-width:700px) {
+    @include vwMarginChange(0, 30, $spWidth);
   }
 }
 
@@ -84,6 +96,11 @@ img {
   @media screen and (min-width: 1200px) {
     border-bottom: 2px gray solid;
   }
+  @media screen and(max-width:700px) {
+    @include vwFontChangeMax(36, $spWidth);
+    @include vwPaddingChangeFullMax(0, 0, 10, 20, $spWidth);
+  }
+
   &:before {
     position: absolute;
     bottom: 0;
@@ -96,7 +113,16 @@ img {
   }
 }
 
+.header_back {
+  background: #fff;
+  box-shadow: gray 0 2px 4px;
+  transition: 0.3s;
+}
 header {
+  @media screen and(max-width:700px) {
+    display: none;
+  }
+  transition: 0.3s;
   position: fixed;
   font-family: $cop;
   @include vwFontChange(20, 1600);
@@ -113,8 +139,12 @@ header {
       align-items: center;
       li {
         @include vwPaddingChange(5, 25, 1600);
+        border-bottom: transparent 2px solid;
+        cursor: pointer;
+        transition: 0.2s;
         &:hover {
-          border-bottom: $gold 0.12vw solid;
+          border-bottom: $gold 2px solid;
+          transition: 0.3s;
         }
       }
     }
@@ -122,6 +152,9 @@ header {
 }
 .kv {
   background-image: url("../img/kv_pc.png");
+  @media screen and(max-width:700px) {
+    background-image: url("../img/kv_sp.png");
+  }
   height: 100vh;
   background-size: cover;
   position: relative;
@@ -129,15 +162,22 @@ header {
   .text_block {
     font-family: $fut;
     position: absolute;
-    bottom: 20%;
+    bottom: 15%;
     left: 5%;
     z-index: 0;
     .sub_title {
       @include vwFontChange(70, 1600);
+      @media screen and(max-width:700px) {
+        @include vwFontChange(40, 375);
+      }
     }
     .main_title {
       @include vwFontChange(90, 1600);
       @include vwPaddingChangeFull(50, 0, 0, 70, 1600);
+      @media screen and(max-width:700px) {
+        @include vwFontChange(40, 375);
+        @include vwPaddingChangeFull(30, 0, 0, 30, 375);
+      }
     }
   }
 }
@@ -259,8 +299,11 @@ header {
             left: 0;
             opacity: 0;
             color: white;
+            transition: 0.3s;
+            cursor: pointer;
             &:hover {
               opacity: 1;
+              transition: 0.3s;
               background: rgba(0, 0, 0, 0.699);
             }
             .mask_title {
@@ -315,4 +358,109 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 700px) {
+  .about {
+    .contents_block {
+      width: 100%;
+      .content_ul {
+        .content {
+          .content_image {
+            display: none;
+          }
+          .content_main {
+            width: 100%;
+          }
+          .content_title {
+            @include vwFontChange(30, $spWidth);
+            @include vwPaddingChangeFullMax(0, 0, 30, 0, $spWidth);
+          }
+          .content_sub_title {
+            @include vwFontChange(20, $spWidth);
+            @include vwPaddingChangeFullMax(0, 0, 20, 0, $spWidth);
+          }
+          .content_main {
+            @include vwFontChange(16, $spWidth);
+            .main_ul {
+              li {
+                .left_area {
+                  width: 30%;
+                }
+                .right_area {
+                  width: 70%;
+                  @include vwFontChange(14, $spWidth);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .skill {
+    .contents_block {
+      width: 100%;
+      .content_area {
+        .content_ul {
+          display: block;
+          .content {
+            @include vwWidthChange(210, $spWidth);
+            @include vwPaddingChange(20, 0, $spWidth);
+            margin: auto;
+            .content_image {
+              @include vwWidthChange(85, $spWidth);
+              @include vwHeightChange(85, $spWidth);
+            }
+            .content_title {
+              @include vwFontChange(20, $spWidth);
+            }
+            .content_list {
+              @include vwHeightChange(185, $spWidth);
+              @include vwFontChange(16, $spWidth);
+              @include lineHeight(32, 16);
+            }
+          }
+        }
+      }
+      .bottom_sentence_area {
+        @include vwFontChange(16, $spWidth);
+      }
+    }
+  }
+
+  .works {
+    .contents_block {
+      width: 100%;
+      .content_area {
+        ul {
+          display: block;
+          .content {
+            width: 100%;
+            @include vwHeightChange(207, $spWidth);
+            .content_mask {
+              .mask_title {
+                @include vwFontChange(18, $spWidth);
+              }
+              .mask_main {
+                width: 95%;
+                @include vwFontChange(14, $spWidth);
+              }
+            }
+          }
+        }
+      }
+      .bottom_sentence_area {
+        @include vwFontChange(16, $spWidth);
+      }
+    }
+  }
+
+  .contact {
+    .contents_block {
+      .main_sentence {
+        @include vwFontChange(16, $spWidth);
+      }
+    }
+  }
 }

@@ -26,8 +26,19 @@ $gold: #8b7246;
   animation: slideDown 0.5s forwards;
   animation-delay: 1s;
 }
+
 .fade_up {
   animation: fadeUp 0.5s forwards ease-out;
+}
+.fade_in {
+  animation: fadeIn 0.5s forwards ease-out;
+}
+.fade_in2 {
+  animation: fadeIn2 0.5s forwards ease-out;
+}
+
+.fade_up_s {
+  animation: fadeUps 0.5s forwards ease-out;
 }
 
 .d_1_5 {
@@ -39,12 +50,50 @@ $gold: #8b7246;
 .d_1_8 {
   animation-delay: 1.9s;
 }
+
+@for $i from 1 to 10 {
+  .d_0_#{$i} {
+    animation-delay: #{$i * 0.1}s;
+  }
+}
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUps {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
