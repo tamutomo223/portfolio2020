@@ -35,40 +35,25 @@ $(function () {
         $(".comeon").addClass("fade_in2");
       }
     });
-  });
 
+    scrollPosi = $(document).scrollTop();
+
+    $(".fix")
+      .stop(true, true)
+      .animate(
+        {
+          "background-position-y": -scrollPosi / 3 + "px",
+        },
+        100
+      );
+  });
   var headerHeight = $("header").height();
-  function scrollToAbout() {
-    $("html,body").animate({
-      scrollTop: $(".about").offset().top - headerHeight,
-    });
-  }
-  function scrollToSkill() {
-    $("html,body").animate({
-      scrollTop: $(".skill").offset().top - headerHeight,
-    });
-  }
-  function scrollToWorks() {
-    $("html,body").animate({
-      scrollTop: $(".works").offset().top - headerHeight,
-    });
-  }
-  function scrollToContact() {
-    $("html,body").animate({
-      scrollTop: $(".contact").offset().top - headerHeight,
-    });
-  }
 
-  $(".about_go").click(function () {
-    scrollToAbout();
-  });
-  $(".skill_go").click(function () {
-    scrollToSkill();
-  });
-  $(".works_go").click(function () {
-    scrollToWorks();
-  });
-  $(".contact_go").click(function () {
-    scrollToContact();
+  $(".scroll").click(function () {
+    var id = $(this).attr("id");
+    var class1 = `.${id}`;
+    $("html,body").animate({
+      scrollTop: $(class1).offset().top - headerHeight,
+    });
   });
 });
